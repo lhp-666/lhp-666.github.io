@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF Web 滑稽 - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF Web 滑稽</h1>
+ <p><strong>题目分类：</strong>WEB</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>首先，我是用微信登录的该网页，点击链接进入后，屏幕上出现了成群的滑稽表情包。</li>
+ <li>我尝试使用鼠标左键无用，再用右键发现只有保存图片的选项，在我尝试了10多分钟之后没有效果。</li>
+ <li>经过询问AI发现微信没有右键检查，于是我复制CTF链接，在电脑自带浏览器里做题，这次鼠标右键后出现了检查，经过检查后，页面上正好有如同签到题一样的flag，我复制后，回到启动链接页面粘贴后完成此题。</li>
+ </ol>
+ <h2>总结后的正确操作步骤</h2>
+ <ol>
+ <li>访问题目链接</li>
+ <li>右键检查源代码，复制FLAG，粘贴后，解答出此题</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>微信隐去了右键检查，所以以后的题大概率要在浏览器里打开解答</li>
+ <li>右键检查是解题的关键</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
