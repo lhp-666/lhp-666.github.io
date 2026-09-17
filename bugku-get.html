@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF GET - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF GET</h1>
+ <p><strong>题目分类：</strong>WEB</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>F12或者鼠标右键检查打开开发者工具，查看元素面板、网络面板，F5刷新点开请求，没有找到flag。</li>
+ <li>使用 Ctrl＋U 查看网页源代码，同样没有找到flag。</li>
+ <li>查阅资料理解PHP代码含义：$_GET是PHP用来读取URL地址栏参数的函数，['what']代表读取名为what的参数；if是条件判断语句。</li>
+ <li>代码逻辑：当$what的值等于flag时，就会输出flag。需要在原网址后面拼接参数 <code>?what=flag</code>，访问这个新地址。</li>
+ <li>访问拼接后的地址，获取到flag，回到题目页面提交，完成解题。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>复制题目页面链接。</li>
+ <li>读懂页面给出的PHP代码提示。</li>
+ <li>在原网址末尾加上 <code>?what=flag</code>，访问新的URL。</li>
+ <li>复制得到的flag，返回题目页面提交完成解题。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>读懂页面源码提示，需要掌握PHP基础语法。</li>
+ <li>$_GET用于接收URL传入的参数，if是条件判断语句，echo用来打印输出内容。</li>
+ <li>GET传参可以直接在网址后面拼接，向服务器传递数据。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
