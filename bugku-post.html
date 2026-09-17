@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF POST - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ pre { background:#f6f8fa; padding:12px; border-radius:6px; overflow-x:auto; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF POST</h1>
+ <p><strong>题目分类：</strong>WEB</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>F12或鼠标右键打开开发者界面。</li>
+ <li>根据题目提示，需要在网络面板把消息编辑并重发。尝试将GET改成POST，Edge无法修改POST，火狐找不到请求体输入框。</li>
+ <li>查阅资料，使用浏览器控制台运行fetch代码，在浏览器内部构造POST请求，发送参数获取页面返回的flag。</li>
+ <li>复制flag，粘贴回题目页面完成解题。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>F12或鼠标右键打开开发者界面。</li>
+ <li>切换到控制台，运行fetch代码，构造POST请求发送参数，获取服务器返回的flag。</li>
+ <li>复制flag，粘贴回post题目页面。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>浏览器版本变化会导致开发者工具界面发生改变，部分功能会出现限制。</li>
+ <li>做题要积累多种解题方法，避免因为浏览器差异导致无法解题。</li>
+ <li>fetch代码解析：
+ <pre>fetch("http://160.202.254.160:19741/", {
+   method:"POST",
+   headers:{
+     "Content-Type":"application/x-www-form-urlencoded"
+   },
+   body:"what=flag"
+ }).then(res=>res.text()).then(console.log)</pre>
+ <ul>
+ <li>fetch：浏览器自带的JS函数，作用就是向网站发送网络请求。</li>
+ <li>"http://160.202.254.160:19741/"：要访问的目标网址。</li>
+ <li>method:"POST"：指定用POST方式发送请求（题目要求）。</li>
+ <li>headers:{...}：请求头，告诉服务器：我传的是表单格式的数据。</li>
+ <li>body:"what=flag"：POST要发送的数据，传给服务器参数 what=flag。</li>
+ <li>.then(res=>res.text())：拿到服务器返回的网页内容。</li>
+ <li>.then(console.log)：把返回的内容打印到控制台，我们就能看到flag。</li>
+ </ul>
+ <p>这段代码就是命令浏览器，给目标网站发一条POST消息，带上参数 what=flag，然后把网站回复打印出来。</p >
+ </li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
