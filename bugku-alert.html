@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF alert - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF alert</h1>
+ <p><strong>题目分类：</strong>WEB</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>我在浏览器里输入网址，跳转到alert题目界面</li>
+ <li>屏幕上出现flag就在这里，再次点击后，字幕变为快来找找吧。多次点击后仍是这两句话。</li>
+ <li>按F12检查页面，没有找到有用信息。</li>
+ <li>使用 ctrl＋u 查看网页源代码。</li>
+ <li>源码里发现一段字符串，但直接看不到flag。</li>
+ <li>查阅资料，得知这段内容需要进行HTML实体转换。</li>
+ <li>找到在线HTML解码网站，把字符串粘贴进去解码，flag成功显现。</li>
+ <li>回到alert题目页面，提交flag，解题成功。</li>
+ </ol>
+ <h2>操作步骤</h2>
+ <ol>
+ <li>访问题目链接。</li>
+ <li>快捷键 ctrl＋u 查看网页源代码。</li>
+ <li>复制源码中的字符串，放到HTML在线解码网站进行转换。</li>
+ <li>复制解码得到的flag，回到题目页面提交，完成解题。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>F12开发者工具、右键审查元素并不是每道题都能找到线索。</li>
+ <li><code>Ctrl+U</code>直接查看网页源代码，是Web题很基础重要的思路。</li>
+ <li>遇到HTML实体编码字符串时，可以使用在线解码工具还原内容。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
