@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF 你必须让他停下 - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF 你必须让他停下</h1>
+ <p><strong>题目分类：</strong>WEB</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>复制链接，打开链接后，屏幕不断闪烁刷新。</li>
+ <li>F12或右键检查屏幕，出现开发者面板，显示flag is here。</li>
+ <li>ctrl＋u后页面没变，无法获取有效信息。</li>
+ <li>查找资料后，发现ctrl＋shift+p可以打开命令输入框，但如果没按f12，则会出现打印机界面。</li>
+ <li>查找资料后，发现选择Disable JavaScript可以使页面停止刷新。</li>
+ <li>flag浮现，复制并粘贴后解题成功。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>复制题目链接。</li>
+ <li>F12或鼠标右键检查，出现开发者界面。</li>
+ <li>ctrl＋shift+p，打开命令输入框选择，Disable JavaScript，使页面停止刷新。</li>
+ <li>flag浮现，复制并粘贴后解题成功。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>Ctrl加u，并非万能，并非在任何界面都可以出现网页源代码。</li>
+ <li>F12或鼠标右键检查后，并非结束。还需和其他指令打配合。</li>
+ <li>ctrl加shift+p,可以打开命令输入框,选择Disable JavaScript可以使页面停止刷新。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
