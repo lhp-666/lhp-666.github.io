@@ -6,3 +6,4 @@
 - [Bugku CTF Web alert](bugku-alert.html)
 - [Bugku CTF Web 你必须让他停下](bugku-stop.html)
 - [Bugku CTF 头等舱](bugku-firstclass.html)
+- [Bugku CTF GET](bugku-get.html)
