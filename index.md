@@ -5,3 +5,4 @@
 - [Bugku CTF 计算器](bugku-calculator.html)
 - [Bugku CTF Web alert](bugku-alert.html)
 - [Bugku CTF Web 你必须让他停下](bugku-stop.html)
+- [Bugku CTF 头等舱](bugku-firstclass.html)
