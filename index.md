@@ -1,12 +1,12 @@
 # 博客帖子列表
 
-- [Task1 第一个帖子](./post1)
-- [Bugku CTF Web 滑稽](bugku-huaji.html)
-- [Bugku CTF 计算器](bugku-calculator.html)
-- [Bugku CTF Web alert](bugku-alert.html)
-- [Bugku CTF Web 你必须让他停下](bugku-stop.html)
-- [Bugku CTF 头等舱](bugku-firstclass.html)
-- [Bugku CTF GET](bugku-get.html)
-- [Bugku CTF POST](bugku-post.html)
-- [Bugku CTF /.-](bugku-morse.html)
-- [Bugku CTF 聪明的小羊](bugku-sheep.html)
+- [Task1 第一个帖子](./post1)｜2026‑09‑2
+- [Bugku CTF Web 滑稽](bugku-huaji.html)｜2026‑09‑09
+- [Bugku CTF 计算器](bugku-calculator.html)｜2026‑09‑09
+- [Bugku CTF Web alert](bugku-alert.html)｜2026‑09‑17
+- [Bugku CTF Web 你必须让他停下](bugku-stop.html)｜2026‑09‑17
+- [Bugku CTF 头等舱](bugku-firstclass.html)｜2026‑09‑17
+- [Bugku CTF GET](bugku-get.html)｜2026‑09‑17
+- [Bugku CTF POST](bugku-post.html)｜2026‑09‑17
+- [Bugku CTF /.-](bugku-morse.html)｜2026‑09‑26
+- [Bugku CTF 聪明的小羊](bugku-sheep.html)｜2026‑09‑26
