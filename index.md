@@ -8,3 +8,4 @@
 - [Bugku CTF 头等舱](bugku-firstclass.html)
 - [Bugku CTF GET](bugku-get.html)
 - [Bugku CTF POST](bugku-post.html)
+- [Bugku CTF /.-](bugku-morse.html)
