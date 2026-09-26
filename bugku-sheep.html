@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF 聪明的小羊 - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF 聪明的小羊</h1>
+ <p><strong>题目分类：</strong>crypto</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>阅读题目文字提示，可以判断出本题是栅栏密码，栅栏数为2。</li>
+ <li>向AI询问，获取栅栏密码在线解码工具地址。</li>
+ <li>打开解码网站，将密文粘贴进去，设置栅栏数为2进行解密。</li>
+ <li>解密之后得到flag，复制flag回到聪明的小羊题目页面提交，完成解题。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>访问题目网页链接。</li>
+ <li>读懂题目的提示信息，识别加密方式。</li>
+ <li>打开栅栏密码解码器，粘贴密文，栅栏参数设置为2，执行解码。</li>
+ <li>复制解码得到的flag，返回题目页面粘贴提交。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>做密码题，首先仔细阅读题干，题目提示会直接告诉我们加密的算法类型。</li>
+ <li>不同加密算法，对应不同的解码工具。可以借助AI寻找在线工具，也可以直接让AI辅助解码。</li>
+ <li>栅栏密码属于古典密码，解题关键在于设置正确的栅栏层数参数。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
