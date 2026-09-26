@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF /.- - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF /.-</h1>
+ <p><strong>题目分类：</strong>crypto</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>访问题目网页，观察给出的密文，由点、横杠、斜杠分隔符组成，判断这是摩斯密码。</li>
+ <li>打开随波逐流CTF编码工具软件，找到字符解密1中的摩斯morse解码功能。</li>
+ <li>复制题目中的整段摩斯密文，粘贴进软件的文本输入区域。</li>
+ <li>点击摩斯解码功能，软件输出解密后的字符，把字母全部转为小写。</li>
+ <li>按照平台格式，将字符串放进flag{}大括号内，复制flag回到题目页面提交，解题成功。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>打开Bugku /.-题目页面，复制页面给出的摩斯密码密文。</li>
+ <li>启动随波逐流工具软件，选择【字符解密1】→【摩斯morse解码】。</li>
+ <li>把密文粘贴输入框，执行解码，得到解密后的字符串，转为小写。</li>
+ <li>套上flag{}格式，复制结果，回到题目页面粘贴提交，完成解题。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>由`.`和`‑`组成，斜杠`/`分隔每个字符，就是摩斯密码的典型特征。</li>
+ <li>随波逐流是CTF常用的国产离线工具，内置大量古典密码解码功能，不用网页在线网站。</li>
+ <li>解密出来的字母有可能是大写，平台提交要求小写，解密完成记得转成小写再提交。</li>
+ <li>解密得到原始字符串之后，需要按照题目要求，套上flag{}标准格式再提交答案。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
