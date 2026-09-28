@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF ok - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF ok</h1>
+ <p><strong>题目分类：</strong>crypto</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>访问题目网页，点击下载按钮，把txt附件保存到本地电脑。</li>
+ <li>记事本打开下载好的文件，整篇文本都是 Ook. Ook? Ook!，识别为Ook编码，是Brainfuck的变体密码。</li>
+ <li>尝试使用国外在线Ook解码网站，网站后台报错无法正常解密。</li>
+ <li>切换使用Bugku官方提供的Brainfuck/Ook在线解密工具。</li>
+ <li>复制文档内全部密文粘贴到解密工具输入框，执行Ook解密。</li>
+ <li>解密成功得到flag，复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>打开Bugku ok题目页面，下载附件文本文件。</li>
+ <li>记事本打开附件，复制全部Ook密文。</li>
+ <li>使用Bugku官方在线Ook解密工具，粘贴密文执行解密。</li>
+ <li>复制解密输出得到的flag，返回题目页面粘贴提交，完成解题。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>Ook编码特征：由 Ook.、Ook!、Ook? 三种语句不断重复构成，属于Brainfuck变体密码。</li>
+ <li>在线解密网站有可能出现服务器报错，遇到工具失效，要及时更换别的解密工具。</li>
+ <li>Crypto密码题，下载附件之后，先用记事本打开阅读内容，观察字符串特征，以此判断加密算法类型。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
