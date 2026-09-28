@@ -3,39 +3,40 @@
  <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Bugku CTF [+-<>] - lhp-666</title>
+ <title>Bugku CTF [*<-*] - lhp‑666</title>
  <style>
- body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
- h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
- h2 { margin-top: 30px; }
- a { color: #0366d6; text-decoration: none; }
- .back { margin-top: 30px; }
+ body { max-width:720px; margin:0 auto; padding:20px; font-family:sans‑serif; line-height:1.8; color:#333; }
+ h1 { border-bottom:2px solid #eee; padding-bottom:10px; }
+ h2 { margin-top:30px; }
+ a { color:#0366d6; text-decoration:none; }
+ .back { margin-top:30px; }
  </style>
  </head>
  <body>
- <p><a href=" ">← 返回博客首页</a ></p >
- <h1>Bugku CTF [+-<>]</h1>
+ <p><a href="">← 返回博客首页</a ></p >
+ <h1>Bugku CTF [*<-*]</h1>
  <p><strong>题目分类：</strong>crypto</p >
  <h2>解题思路</h2>
  <ol>
- <li>访问题目网页，观察题干给出的密文，由 <code>+‑&lt;&gt;[].,</code> 符号组成，识别为Brainfuck密码，简称BF密码。</li>
+ <li>访问题目网页，观察题干给出的密文，由 <code>&lt;[]&gt;+-.,</code> 符号组成，识别为Brainfuck密码，简称BF密码。</li>
  <li>复制页面给出的一整段密文。</li>
- <li>打开Bugku官方Brainfuck在线解密工具，将密文粘贴进输入框，点击运行按钮解密。</li>
- <li>解密成功得到flag，复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+ <li>打开Brainfuck在线解密工具网页，将密文粘贴进输入框，点击运行按钮解密。</li>
+ <li>解密成功得到flag，复制flag到Bugku题目网页输入框提交，解题成功。</li>
  </ol>
  <h2>总结后的操作步骤</h2>
  <ol>
- <li>打开Bugku [+-<>]题目页面，复制全部Brainfuck密文。</li>
- <li>访问Bugku在线Brainfuck解密工具网页。</li>
- <li>粘贴密文，点击运行执行解密。</li>
- <li>复制解密输出得到的flag，返回题目页面粘贴提交，完成解题。</li>
+ <li>打开Bugku [*<-*]题目页面，复制全部Brainfuck密文。</li>
+ <li>访问Brainfuck在线解密工具网页。</li>
+ <li>粘贴密文，点击执行进行解密。</li>
+ <li>复制解密输出得到的flag，返回题目网页粘贴提交，完成解题。</li>
  </ol>
  <h2>总结收获</h2>
  <ol>
- <li>Brainfuck密码标志性符号：<code>+‑&lt;&gt;[].,</code>，看到这些字符就可以直接判定BF密码。</li>
- <li>Ook编码就是Brainfuck密码的变体，同一个解密网站可以处理这两种密码。</li>
- <li>国外在线工具可能失效，优先使用Bugku自带的国内解密网站，访问稳定。</li>
+ <li>认识Brainfuck密码，记住它独有的符号字符集。</li>
+ <li>针对特殊小众密码，要寻找对应的在线解码网站，不能使用普通栅栏、凯撒解码器。</li>
  </ol>
- <div class="back"><a href="./">← 返回博客首页</a ></div>
+ <div class="back">
+ <a href=" ">↑ 返回顶部</a >
+ </div>
  </body>
  </html>
