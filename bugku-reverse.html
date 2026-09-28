@@ -5,12 +5,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Bugku CTF 入门逆向 - lhp-666</title>
  <style>
- body { max-width:720px;margin:0 auto;padding:20px;font-family:sans-serif;line-height:1.8;color:#333; }
- h1 { border-bottom:2px solid #eee;padding-bottom:10px; }
- h2 { margin-top:30px; }
- a { color:#0366d6;text-decoration:none; }
- .back { margin-top:30px; }
- pre{background:#f6f8fa;padding:12px;border-radius:6px;overflow-x:auto;}
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ .back { margin-top: 30px; }
  </style>
  </head>
  <body>
@@ -23,14 +22,10 @@
  <li>记事本打开附件，观察文件头部出现PK标记，可以判断文件本质是zip压缩包，仅仅后缀伪装为exe。</li>
  <li>开启文件夹“查看”选项，勾选显示文件扩展名，重命名，将后缀 <code>.exe</code> 修改为 <code>.zip</code>。</li>
  <li>解压zip压缩包，得到真正可执行程序 baby.exe。</li>
- <li>本题flag<strong>没有存成连续字符串</strong>，而是通过汇编mov指令，把每个字符的ASCII字节分开写入栈。
- 因此strings命令、strings.online网站都无法直接检索到完整flag。</li>
+ <li>本题flag<strong>没有存成连续字符串</strong>，而是通过汇编mov指令，把每个字符的ASCII字节分开写入栈。因此strings命令、strings.online网站都无法直接检索到完整flag。</li>
  <li>尝试在线工具pe.0xd00.com：仅可以查看PE头与原始十六进制二进制，<strong>没有反汇编功能，看不到mov指令</strong>。</li>
- <li>尝试dogbolt.org在线反编译网站：上传baby.exe，调用Ghidra引擎生成C伪代码。
- 伪代码内可以看见 <code>acStack42[x] = 0x??</code>，每一个0x??就是单个字符的ASCII十六进制编码。
- dogbolt网页版存在缺陷，无法成功定位main函数，无法直接看到完整赋值代码。</li>
- <li>把伪代码里每一处十六进制 <code>0x??</code>，对照ASCII表逐个转换为字符，拼接得到flag：
- <code>flag{Re_1s_S0_C00l}</code>。</li>
+ <li>尝试dogbolt.org在线反编译网站：上传baby.exe，调用Ghidra引擎生成C伪代码。伪代码内可以看见 <code>acStack42[x] = 0x??</code>，每一个0x??就是单个字符的ASCII十六进制编码。⚠️注意：dogbolt网页版存在缺陷，无法成功定位main函数，无法直接看到完整赋值代码。</li>
+ <li>把伪代码里每一处十六进制 <code>0x??</code>，对照ASCII表逐个转换为字符，拼接得到flag：<code>flag{Re_1s_S0_C0OL}</code>。</li>
  <li>复制flag回到Bugku题目页面输入框提交，解题成功。</li>
  </ol>
  <h2>总结后的操作步骤</h2>
