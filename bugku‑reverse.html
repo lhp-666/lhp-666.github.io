@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF 入门逆向 - lhp-666</title>
+ <style>
+ body { max-width:720px;margin:0 auto;padding:20px;font-family:sans-serif;line-height:1.8;color:#333; }
+ h1 { border-bottom:2px solid #eee;padding-bottom:10px; }
+ h2 { margin-top:30px; }
+ a { color:#0366d6;text-decoration:none; }
+ .back { margin-top:30px; }
+ pre{background:#f6f8fa;padding:12px;border-radius:6px;overflow-x:auto;}
+ </style>
+ </head>
+ <body>
+ <p><a href=" ">← 返回博客首页</a ></p >
+ <h1>Bugku CTF 入门逆向</h1>
+ <p><strong>题目分类：</strong>RE</p >
+ <h2>解题思路</h2>
+ <ol>
+ <li>访问题目网页，点击下载按钮，保存附件文件到本地电脑。</li>
+ <li>记事本打开附件，观察文件头部出现PK标记，可以判断文件本质是zip压缩包，仅仅后缀伪装为exe。</li>
+ <li>开启文件夹“查看”选项，勾选显示文件扩展名，重命名，将后缀 <code>.exe</code> 修改为 <code>.zip</code>。</li>
+ <li>解压zip压缩包，得到真正可执行程序 baby.exe。</li>
+ <li>本题flag<strong>没有存成连续字符串</strong>，而是通过汇编mov指令，把每个字符的ASCII字节分开写入栈。
+ 因此strings命令、strings.online网站都无法直接检索到完整flag。</li>
+ <li>尝试在线工具pe.0xd00.com：仅可以查看PE头与原始十六进制二进制，<strong>没有反汇编功能，看不到mov指令</strong>。</li>
+ <li>尝试dogbolt.org在线反编译网站：上传baby.exe，调用Ghidra引擎生成C伪代码。
+ 伪代码内可以看见 <code>acStack42[x] = 0x??</code>，每一个0x??就是单个字符的ASCII十六进制编码。
+ dogbolt网页版存在缺陷，无法成功定位main函数，无法直接看到完整赋值代码。</li>
+ <li>把伪代码里每一处十六进制 <code>0x??</code>，对照ASCII表逐个转换为字符，拼接得到flag：
+ <code>flag{Re_1s_S0_C00l}</code>。</li>
+ <li>复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+ </ol>
+ <h2>总结后的操作步骤</h2>
+ <ol>
+ <li>打开Bugku入门逆向题目页面，下载附件。</li>
+ <li>记事本打开附件，观察文件头PK标识，识别是伪装的zip压缩包。</li>
+ <li>修改后缀名为.zip，解压压缩包，取出里面baby.exe程序。</li>
+ <li>打开dogbolt.org网站，上传baby.exe，只勾选Ghidra引擎，执行分析。</li>
+ <li>阅读Ghidra输出的C伪代码，提取每一个 <code>0x??</code>十六进制ASCII编码。</li>
+ <li>对照ASCII编码表，把十六进制数字转换成字符，拼接完整flag。</li>
+ <li>复制flag，返回题目页面粘贴提交，完成解题。</li>
+ </ol>
+ <h2>总结收获</h2>
+ <ol>
+ <li>不能只依靠后缀名判断文件真实格式，要查看文件头部字节特征：PK代表zip压缩包。出题人经常修改后缀进行伪装。</li>
+ <li>exe可执行程序存放的是机器二进制指令，记事本打开只会出现乱码，要借助逆向反编译工具。</li>
+ <li>flag不一定以完整字符串形式存放在程序数据段。出题人可以使用mov指令，把字符逐个写入栈内存，此时字符串提取工具全部失效。</li>
+ <li>各类在线逆向网页工具都存在功能限制：
+ <ul>
+ <li>pe.0xd00.com：只解析PE结构、十六进制查看，不能反汇编。</li>
+ <li>strings.online：境外网站，国内网络打不开。</li>
+ <li>dogbolt.org：仅输出C伪代码，网页存在缺陷，有时无法定位main函数。</ul>
+ </li>
+ <li>正规完整分析需要本地逆向软件，如IDA‑Free、Ghidra开源工具。本地软件可以同时查看汇编列表窗口、伪代码窗口，按下快捷键R，直接把十六进制数值转为可读字符，不用手动查表转换。</li>
+ </ol>
+ <div class="back"><a href="./">← 返回博客首页</a ></div>
+ </body>
+ </html>
