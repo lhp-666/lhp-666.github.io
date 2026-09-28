@@ -10,3 +10,7 @@
 - [Bugku CTF POST](bugku-post.html)｜2026‑09‑17
 - [Bugku CTF /.-](bugku-morse.html)｜2026‑09‑26
 - [Bugku CTF 聪明的小羊](bugku-sheep.html)｜2026‑09‑26
+- [Bugku CTF 这是一张单纯的图片](bugku-purepic.html)｜2026‑09‑27
+- [Bugku CTF ok](bugku-ok.html)｜2026‑09‑27
+- [Bugku CTF [+-<>]](bugku-bf.html)｜2026‑09‑28
+- [Bugku CTF 入门逆向](bugku-reverse.html)｜2026‑09‑28
