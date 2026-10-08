@@ -1,4 +1,4 @@
-# 博客帖子列表
+a# 博客帖子列表
 
 - [Task1 第一个帖子](./post1)｜2026‑09‑2
 - [Bugku CTF Web 滑稽](bugku-huaji.html)｜2026‑09‑09
@@ -14,7 +14,7 @@
 - [Bugku CTF ok](bugku-ok.html)｜2026‑09‑27
 - [Bugku CTF [+-<>]](bugku-bf.html)｜2026‑09‑28
 - [Bugku CTF 入门逆向](bugku-reverse.html)｜2026‑09‑28
-- [Bugku CTF 富强民主](bugku-fuqiangminzhu.html｜2026‑10‑08
+- [Bugku CTF 富强民主](bugku-fuqiangminzhu.html)｜2026‑10‑08
 - [Bugku CTF 散乱的密文](bugku-sanluandemimen.html)｜2026‑10‑08
 - [Bugku CTF .!?](bugku-dianwenhao.html)｜2026‑10‑09
 - [Bugku CTF 这不是md5](bugku-zhebushimd5.html)｜2026‑10‑09
