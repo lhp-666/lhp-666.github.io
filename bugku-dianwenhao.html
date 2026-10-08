@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF .!? - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF .!?</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>打开题目页面，点击下载附件txt文件。</li>
+  <li>打开txt文件，文本内容只有`!`和`?`两种符号。</li>
+  <li>识别密码类型：这是Ook密码，属于Brainfuck的变种密码。</li>
+  <li>打开Ook在线解密网站，将txt全部文本复制粘贴到输入框。</li>
+  <li>选择Ook to text进行解密，得到明文 bugku_jiami。</li>
+  <li>套入flag{}格式，提交flag完成解题。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附带的txt附件。</li>
+  <li>复制txt里面全部`! ?`符号文本。</li>
+  <li>访问Ook在线解密网站，粘贴密文，解密得到明文。</li>
+  <li>组装成flag{}格式，提交答案。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>Ook密码特征：文本仅由`!`和`?`组成，很容易和摩尔斯混淆。</li>
+  <li>遇到只有两种标点符号的Crypto题，除摩尔斯外，需要考虑Ook密码。</li>
+  <li>Ook是Brainfuck的趣味变体，有专门的在线解密工具，不需要手动转换。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
