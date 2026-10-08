@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 富强民主 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 富强民主</h1>
+  <p><strong>题目分类：</strong>MISC</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，描述部分是大量社会主义核心价值观词语，识别为核心价值观编码。</li>
+  <li>查阅编码对照表：富强=0，民主=1，文明=2，和谐=3，自由=4，平等=5，公正=6，法治=7，爱国=8，敬业=9，诚信=a，友善=b。</li>
+  <li>将题目密文按照两个汉字为一组进行分割，每一组对应两位十六进制字符。</li>
+  <li>把每一组中文词语替换成对应的十六进制符号，拼接得到完整的十六进制字符串。</li>
+  <li>将拼接好的十六进制字符串转换为ASCII明文，套上flag{}格式，复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>打开Bugku富强民主题目页面，复制描述里全部密文。</li>
+  <li>按照两个汉字一组拆分密文。</li>
+  <li>对照编码表，把每组词语替换为对应的十六进制字符，拼接完整十六进制串。</li>
+  <li>将十六进制字符串转为ASCII明文，套上flag{}格式，返回题目页面粘贴提交，完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>核心价值观编码规则：12个词语分别对应十六进制0‑b，**两个词语组合成两位十六进制，代表1个字节**，不能单独把一个词语直接转为十进制。</li>
+  <li>遇到大量富强、民主、公正、和谐这类重复中文词语，优先考虑核心价值观编码。</li>
+  <li>该编码可以手动查表分组转换，也可以编写Python脚本本地解码，不需要依赖外网在线工具。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
