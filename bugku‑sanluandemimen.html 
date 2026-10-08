@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 散乱的密文 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 散乱的密文</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>打开题目，得到密文 lf5{ag024c483549d7fd@@1}，提示：一张纸条上凌乱的写着2 1 6 5 3 4。</li>
+  <li>分析提示：这是分组置换密码，将字符串每6个字符分为一组，按照数字 2,1,6,5,3,4 的位置重新排列字符。</li>
+  <li>把密文按6个字符切分，依次做位置置换，拼接所有分组得到明文。</li>
+  <li>末尾多余@@为干扰字符，舍弃，得到标准flag格式，提交。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>提取题目密文与置换顺序提示：2 1 6 5 3 4。</li>
+  <li>将密文每6个字符分成一组，按置换顺序重排字符。</li>
+  <li>拼接所有分组，去掉末尾干扰符号@@。</li>
+  <li>组装成flag{}格式，提交答案完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>置换密码是Crypto基础题型，核心是按给定数字改变字符位置。</li>
+  <li>遇到分组置换题，优先观察提示里的数字序列，确定每组长度。</li>
+  <li>密文末尾经常存在干扰字符，解密后需要甄别剔除。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
