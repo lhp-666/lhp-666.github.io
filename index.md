@@ -17,3 +17,4 @@ a# 博客帖子列表
 - [Bugku CTF 富强民主](bugku-fuqiangminzhu.html)｜2026‑10‑08
 - [Bugku CTF 散乱的密文](bugku-sanluandemimen.html)｜2026‑10‑08
 - [Bugku CTF .!?](bugku-dianwenhao.html)｜2026‑10‑09
+- [Bugku CTF 这不是md5](bugku-zhebushimd5.html)｜2026‑10‑09
