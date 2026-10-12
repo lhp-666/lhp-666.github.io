@@ -19,3 +19,4 @@ a# 博客帖子列表
 - [Bugku CTF .!?](bugku-dianwenhao.html)｜2026‑10‑09
 - [Bugku CTF 这不是md5](bugku-zhebushimd5.html)｜2026‑10‑09
 - [Bugku CTF 贝斯家族](bugku-beisijiazu.html)｜2026‑10‑12
+- [Bugku CTF 矛盾](bugku-maodun.html)｜2026‑10‑12
