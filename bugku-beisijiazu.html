@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF 贝斯家族 - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ pre{background:#f6f8fa;padding:12px;border-radius:6px;overflow-x:auto;}
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <h1>Bugku CTF 贝斯家族</h1>
+ <h2>题目信息</h2>
+ <p>类型：Crypto</p >
+ <p>密文：@iH&lt;(bdR2H;6*Tm,Wx2tzpx2!</p >
+ <h2>解题思路</h2>
+ <p>题目名称“贝斯家族”，贝斯谐音 Base，代表Base系列编码。
+ 密文中包含@、&lt;、!这类特殊字符，不属于base64/base32字符集，判断为Base91编码，直接使用base91解码器进行解码。</p >
+ <h2>解题步骤</h2>
+ <ol>
+ <li>识别：贝斯=Base，密文含有特殊符号，确定是Base91编码。</li>
+ <li>打开Base91解码器，将密文 <code>@iH&lt;(bdR2H;6*Tm,Wx2tzpx2!</code> 粘贴输入。</li>
+ <li>执行Base91解码，得到flag。</li>
+ </ol>
+ <h2>Flag</h2>
+ <pre>flag{554a5058c9021c76}</pre>
+ <h2>收获总结</h2>
+ <p>Base系列不只有base64，Base91字符集范围更大，可以包含@ < ! ; * , 等符号。看到这类非常规字符的Base密文，优先尝试Base91解码。</p >
+ <div class="back">
+ <a href=" ">← 返回首页</a >
+ </div>
+ </body>
+ </html>
