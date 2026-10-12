@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bugku CTF 矛盾 - lhp-666</title>
+ <style>
+ body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+ h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+ h2 { margin-top: 30px; }
+ a { color: #0366d6; text-decoration: none; }
+ pre{background:#f6f8fa;padding:12px;border-radius:6px;overflow-x:auto;}
+ .back { margin-top: 30px; }
+ </style>
+ </head>
+ <body>
+ <h1>Bugku CTF 矛盾</h1>
+ <h2>题目信息</h2>
+ <p>类型：Web</p >
+ <p>访问地址：http://160.202.254.160:14410</p >
+ <h2>解题思路</h2>
+ <p>题目名字为矛盾，考察PHP弱类型比较。源码逻辑存在两个条件：
+ 1. !is_numeric($num)：$num不能是纯数字
+ 2. $num == 1：$num弱比较等于1
+ 两个条件看似矛盾，利用PHP弱类型特性，当字符串以数字开头时，和数字比较会自动提取开头数字。构造1a即可同时满足两个条件。</p >
+ <h2>解题步骤</h2>
+ <ol>
+ <li>打开题目链接，观察题目提示，判断考点为PHP弱类型。</li>
+ <li>构造URL参数：?num=1a</li>
+ <li>访问完整链接 http://160.202.254.160:14410/?num=1a</li>
+ <li>页面返回flag。</li>
+ </ol>
+ <h2>Flag</h2>
+ <pre>flag{123456}</pre>
+ <h2>收获总结</h2>
+ <p>PHP中==是弱比较，===是强比较。弱比较时字符串和数字对比，会自动截取开头数字。is_numeric会判断变量是否为纯数字字符串，1a不是纯数字，能绕过is_numeric检测。</p >
+ <div class="back">
+ <a href=" ">← 返回首页</a >
+ </div>
+ </body>
+ </html>
