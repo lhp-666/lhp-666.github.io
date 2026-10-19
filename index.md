@@ -29,3 +29,4 @@ a# 博客帖子列表
 - [Bugku CTF 眼见非实](bugku-yanjianfeishi.html)｜2026‑10‑16
 - [Bugku CTF 你以为是md5吗](bugku-niyiweishimd5ma.html)｜2026‑10‑16
 - [Bugku CTF easy_hash](bugku-easyhash.html)｜2026‑10‑19
+- [Bugku CTF 多种方法解决](bugku-duozhongfangfajiejue.html)｜2026‑10‑19
