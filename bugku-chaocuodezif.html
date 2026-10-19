@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 抄错的字符 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 抄错的字符</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，拿到密文 QWIHBLGZXZJSXZNVZBW，读提示：小明把数字抄成了字母，并且全部改成大写。</li>
+  <li>根据形状相似替换字符：I换成1、Z换成2、S换成5，还原base64原文 QW1hbl92ZXJ5X2Nvb2w=。</li>
+  <li>使用base64解码工具解密还原后的字符串。</li>
+  <li>解码得到明文，套入flag{}格式，复制flag回到Bugku页面提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>拿到题目密文，根据提示还原被抄错的数字，得到正确的base64字符串。</li>
+  <li>打开base64解码工具，粘贴还原后的字符串进行解码。</li>
+  <li>组装成flag{}格式，提交答案完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>题目提示是关键，这类题型是形近字符替换，I和1、Z和2、S和5是高频替换组合。</li>
+  <li>还原之后一般是base64编码，还原后需要补齐等号再解码。</li>
+  <li>看到全部大写的密文，要留意是不是原本有数字，被抄写错误替换成字母。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
