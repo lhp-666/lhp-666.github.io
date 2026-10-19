@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 把猪困在圈里 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 把猪困在圈里</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，点击下载附件txt文件。</li>
+  <li>打开txt，里面是base64编码内容，先将base64解码为图片。</li>
+  <li>观察图片里的符号，识别为猪圈密码（猪笔密码）。</li>
+  <li>使用猪圈密码解密工具对照符号解密，得到明文thisispigpassword。</li>
+  <li>套入flag{}格式，复制flag回到Bugku页面提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附带的txt附件。</li>
+  <li>把txt里的base64文本解码，得到猪圈密码图片。</li>
+  <li>使用猪圈密码解密工具，对照图形解密得到明文。</li>
+  <li>组装成flag{}格式，提交答案完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>题目名字是提示，“猪”对应猪圈密码。</li>
+  <li>很多猪圈密码题会用base64把图片藏在txt里，需要先base64转图片再解密。</li>
+  <li>猪圈密码属于图形替换密码，需要对照表或者在线工具解密。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
