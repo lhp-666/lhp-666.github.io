@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 你以为是md5吗 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 你以为是md5吗</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，下载附件md5文件。</li>
+  <li>打开文件，观察字符串，提示是md5的构成，它并不是md5哈希解密。</li>
+  <li>md5由16个字节、32个十六进制字符组成，把密文按两个字符一组，转成ASCII字符。</li>
+  <li>拼接得到明文，套入flag{}格式，复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附带的md5附件文件。</li>
+  <li>读取里面的字符串，识别为十六进制编码。</li>
+  <li>使用十六进制转ASCII工具解码字符串。</li>
+  <li>组装成flag{}格式，提交答案完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>题目名字是陷阱，不要直接拿去做md5解密。</li>
+  <li>提示“md5的构成”意思是md5使用十六进制字符，这道题本质是hex转ASCII。</li>
+  <li>看到32位0-9、a-f的字符串，不一定是md5哈希，也有可能是普通十六进制编码。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
