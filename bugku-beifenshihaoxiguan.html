@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 备份是个好习惯 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 备份是个好习惯</h1>
+  <p><strong>题目分类：</strong>WEB</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，看到页面上输出了MD5相关内容，结合题目名字，判断存在备份文件泄露。</li>
+  <li>在链接后面加上index.php.bak，访问这个地址，下载PHP源码备份文件。</li>
+  <li>打开备份源码，发现要求key1和key2的md5值相等，但是key1和key2本身不相等，同时代码会过滤key字符串。</li>
+  <li>构造payload，利用PHP的parse_str特性，传入kkey1和kkey2，绕过key过滤，同时选用0e开头的弱类型字符串满足md5相等条件。</li>
+  <li>访问构造好的链接，页面输出flag，复制flag回到Bugku题目页面提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>打开题目访问链接，尝试访问index.php.bak，下载源码备份。</li>
+  <li>阅读源码，理清条件：md5(key1)==md5(key2) 并且 key1 != key2。</li>
+  <li>构造绕过过滤的payload，使用0e开头的字符串。</li>
+  <li>访问payload链接拿到flag，回到页面提交完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>题目名字带“备份”，优先考虑.bak这类备份文件泄露，获取源码是关键一步。</li>
+  <li>parse_str遇到str_replace过滤key时，可以用kkey1这种方式绕过，替换之后变成key1。</li>
+  <li>PHP弱类型中，0e开头的md5值会被当作0，两个0e开头的哈希使用==比较会判定相等。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
