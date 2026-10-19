@@ -25,3 +25,4 @@ a# 博客帖子列表
 - [Bugku CTF 备份是个好习惯](bugku-beifenshihaoxiguan.html)｜2026‑10‑14
 - [Bugku CTF 抄错的字符](bugku-chaocuodezif.html)｜2026‑10‑14
 - [Bugku CTF 隐写](bugku-yinxie.html)｜2026‑10‑15
+- [Bugku CTF telnet](bugku-telnet.html)｜2026‑10‑15
