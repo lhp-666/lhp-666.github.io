@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 黄道十二宫 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 黄道十二宫</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，点击下载附件黄道十二宫.jpg图片。</li>
+  <li>识别图片里面的密文字符串。</li>
+  <li>这是十二宫密码，使用AZdecrypt工具，将提取好的密文放入工具进行解密。</li>
+  <li>解密得到明文，套入flag{}格式，复制flag回到Bugku题目页面输入框提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附带的jpg图片附件。</li>
+  <li>提取图片中的全部密文字符。</li>
+  <li>打开AZdecrypt工具，粘贴密文进行解密。</li>
+  <li>组装成flag{}格式，提交答案完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>黄道十二宫密码（十二宫密码）是CTF里比较经典的替换密码，有专门的AZdecrypt工具来解密。</li>
+  <li>这类题目一般以图片形式给出密文，第一步需要先识别提取图片里的字符。</li>
+  <li>遇到十二宫相关的Crypto题，优先使用AZdecrypt工具尝试解密。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
