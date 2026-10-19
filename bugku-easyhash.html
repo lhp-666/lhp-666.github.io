@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF easy_hash - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF easy_hash</h1>
+  <p><strong>题目分类：</strong>CRYPTO</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目页面，下载附件，复制里面的base64字符串。</li>
+  <li>在终端执行 base64 -d 命令对字符串解码，得到flag.py源码。</li>
+  <li>阅读源码：脚本读取flag文件，对flag里面<strong>每一个单独字符分别md5</strong>，每个md5单独一行输出到output。</li>
+  <li>写反向查表脚本：预先生成所有可打印ASCII字符对应的md5对照表。</li>
+  <li>读取output里每一行md5，逐个查表还原字符，拼接得到完整flag。</li>
+  </ol>
+  <h2>操作步骤</h2>
+  <ol>
+  <li>复制附件中的base64字符串，终端 base64 -d 解码，拿到flag.py。</li>
+  <li>看懂源码逻辑：脚本会把flag里的每个字符单独计算md5，分行输出。</li>
+  <li>编写解密脚本，生成【字符-md5】映射彩虹表。</li>
+  <li>把output里所有md5放进脚本，查表还原原文，拿到flag提交。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>一开始误以为是PHP md5弱比较题，踩坑，仔细看源码才是逐字符md5。</li>
+  <li>单个字符md5数量有限（只有可打印ASCII），可以直接预生成彩虹表查表，不需要爆破。</li>
+  <li>拿到CTF题第一件事是读懂源码逻辑，不要凭题目标题惯性套考点。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
