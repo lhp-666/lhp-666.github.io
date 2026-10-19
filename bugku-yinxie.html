@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 隐写 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 隐写</h1>
+  <p><strong>题目分类：</strong>MISC</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，点击下载附件PNG图片。</li>
+  <li>使用WinHex或者010 Editor打开图片，找到PNG的IHDR块。</li>
+  <li>IHDR中存放图片宽高信息，将高度的值从 00 00 01 A4 修改为 00 00 01 F4。</li>
+  <li>保存修改后的图片，重新打开图片，就能看到隐藏在下方的flag。</li>
+  <li>复制flag，回到Bugku题目页面提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附带的PNG图片。</li>
+  <li>用WinHex打开图片，定位IHDR块的高度字段。</li>
+  <li>修改高度十六进制数值，保存图片。</li>
+  <li>打开修改后的图片，读取隐藏flag，提交完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>PNG图片的IHDR头部记录宽高，修改高度可以把图片被隐藏的下半部分显示出来。</li>
+  <li>这类图片隐写，肉眼看图看不到完整内容，需要十六进制编辑器修改文件头。</li>
+  <li>常见工具：WinHex、010 Editor都可以修改PNG头部IHDR信息。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
