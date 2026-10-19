@@ -23,3 +23,4 @@ a# 博客帖子列表
 - [Bugku CTF 把猪困在圈里](bugku-bazhukunzaiquanli.html)｜2026‑10‑13
 - [Bugku CTF 黄道十二宫](bugku-huangdaoshiergong.html)｜2026‑10‑13
 - [Bugku CTF 备份是个好习惯](bugku-beifenshihaoxiguan.html)｜2026‑10‑14
+- [Bugku CTF 抄错的字符](bugku-chaocuodezif.html)｜2026‑10‑14
