@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 眼见非实 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 眼见非实</h1>
+  <p><strong>题目分类：</strong>MISC</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，点击下载附件文件。</li>
+  <li>把文件的后缀修改为zip，双击打开压缩包。</li>
+  <li>打开压缩包里的 document.xml 文件。</li>
+  <li>按下快捷键 Ctrl + F，在搜索框输入 flag，搜索定位得到flag。</li>
+  <li>复制flag，回到Bugku题目页面输入框提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载题目附件，修改文件后缀为zip。</li>
+  <li>打开zip压缩包，找到并打开 document.xml。</li>
+  <li>使用Ctrl+F搜索关键词 flag。</li>
+  <li>复制搜索到的flag提交，完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>眼见非实的含义是外表的后缀是迷惑项，文件本质是压缩包。</li>
+  <li>docx这类文档本质上就是zip压缩包，里面包含xml配置文件。</li>
+  <li>Ctrl+F搜索可以快速在大量文本里定位目标关键词。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
