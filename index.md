@@ -27,3 +27,4 @@ a# 博客帖子列表
 - [Bugku CTF 隐写](bugku-yinxie.html)｜2026‑10‑15
 - [Bugku CTF telnet](bugku-telnet.html)｜2026‑10‑15
 - [Bugku CTF 眼见非实](bugku-yanjianfeishi.html)｜2026‑10‑16
+- [Bugku CTF 你以为是md5吗](bugku-niyiweishimd5ma.html)｜2026‑10‑16
