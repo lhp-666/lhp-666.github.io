@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF telnet - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF telnet</h1>
+  <p><strong>题目分类：</strong>MISC</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，点击下载压缩包附件，解压后得到 networking.pcap 流量包。</li>
+  <li>使用 Wireshark 打开这个 pcap 流量文件。</li>
+  <li>在 Wireshark 的过滤输入框中输入 telnet，筛选出 telnet 相关数据包。</li>
+  <li>任意选中一条 telnet 数据包，右键选择【追踪】→【TCP流】，在TCP流窗口里直接看到flag。</li>
+  <li>复制flag，回到Bugku题目页面输入提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载压缩包，解压拿到 networking.pcap。</li>
+  <li>Wireshark 打开流量包，使用 telnet 过滤器筛选包。</li>
+  <li>右键数据包，追踪TCP流，读取里面的flag。</li>
+  <li>复制flag提交，完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>telnet协议传输内容不加密，是明文传输，抓包后追踪TCP流就能直接看到内容。</li>
+  <li>Wireshark 追踪TCP流是MISC流量题里非常常用的操作。</li>
+  <li>过滤协议可以快速把无关数据包隐藏，方便定位关键内容。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
