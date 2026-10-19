@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bugku CTF 多种方法解决 - lhp-666</title>
+  <style>
+  body { max-width: 720px; margin: 0 auto; padding: 20px; font-family: sans-serif; line-height: 1.8; color: #333; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { margin-top: 30px; }
+  a { color: #0366d6; text-decoration: none; }
+  .back { margin-top: 30px; }
+  </style>
+  </head>
+  <body>
+  <p><a href=" ">← 返回博客首页</a ></p >
+  <h1>Bugku CTF 多种方法解决</h1>
+  <p><strong>题目分类：</strong>MISC</p >
+  <h2>解题思路</h2>
+  <ol>
+  <li>访问题目网页，下载附件 KEY.exe。</li>
+  <li>使用010 Editor打开exe，提取里面图片对应的base64编码字符串。</li>
+  <li>将base64解码，生成二维码图片。这一步可以用CyberChef、随波逐流、img标签渲染等多种方式，对应题目名字。</li>
+  <li>使用二维码解码工具识别图片，得到 KEY{dca57f966e4e4e31fd5b15417da63269}。</li>
+  <li>复制flag，回到Bugku页面提交，解题成功。</li>
+  </ol>
+  <h2>总结后的操作步骤</h2>
+  <ol>
+  <li>下载KEY.exe附件，打开提取base64字符串。</li>
+  <li>base64解码生成二维码图片。</li>
+  <li>扫码读取内容，得到KEY{}格式的flag。</li>
+  <li>复制flag提交，完成解题。</li>
+  </ol>
+  <h2>总结收获</h2>
+  <ol>
+  <li>题目的名字“多种方法解决”，意思是base64转图片、二维码解码都有很多工具可以完成。</li>
+  <li>exe里面内嵌base64图片是MISC经典套路。</li>
+  <li>提示KEY{}，flag的包裹符号是KEY，不是flag{}。</li>
+  </ol>
+  <div class="back"><a href="./">← 返回博客首页</a ></div>
+  </body>
+  </html>
